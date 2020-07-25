@@ -4,37 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style type="text/css">
+      .str0 {
+        fill: orange;
+      }
+      .shape {
+        stroke: #fff;
+      }
+      .clipped {
+        clip-path: url(#clip1);
+        width: 900px;
+        height: 600px;
+      }
+      .clipped img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
-    <svg viewBox="0 0 900 600">
+    <svg viewBox="0 0 900 600" width="0" height="0" class="shape">
       <defs>
-        <style type="text/css">
-           .str0 {stroke:rgba(0, 0, 0, 0.034);stroke-width:6.94488}
-          .fil0 {fill:orange}
-          .clipped{
-            clip-path:url(#clip1)
-            width:900px;
-            height:600px;
-          }
-        </style>
-    
         <clipPath id="clip1">
           <polygon
             id="p2"
-            class="fil0 str0"
-            points="436,608 1089,201 1912,207 2558,487 2775,911 2542,1507 1794,1928 609,1581 403,1134 "
+            class="str0"
+            points="26,86 11.2,40.4 50,12.2 88.8,40.4 74,86"
+          />
+
+          <animate
+            xlink:href="#p2"
+            attributeName="points"
+            values="26,86 11.2,40.4 50,12.2 88.8,40.4 74,86;16,96 21.2,45.4 30,12.2 88.8,40.4 74,76;26,86 11.2,40.4 50,12.2 88.8,40.4 74,86"
+            dur="5s"
+            repeatCount="indefinite"
+            fill="freeze"
           />
         </clipPath>
-      <animate
-        xlink:href="#p2"
-        attributeName="points"
-        values="436,608 1089,201 1912,207 2558,487 2775,911 2542,1507 1794,1928 609,1581 403,1134; 630,533 970,93 1867,107 2450,293 2623,930 2401,1586 1540,1740 757,1500 423,1227;
-        436,608 1089,201 1912,207 2558,487 2775,911 2542,1507 1794,1928 609,1581 403,1134"
-        dur="5s"
-        repeatCount="indefinite"
-        fill="freeze"
-      />
-    <defs>
+      </defs>
     </svg>
     <figure class="clipped">
       <img src="static/images/ek.jpg" alt="" />
